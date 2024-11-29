@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://43jvsenaeecc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy8ng"]
+size = Vector2(56, 63)
+
+[node name="Finish" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6.5, 14)
+scale = Vector2(1.20313, 1.4375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 28.5)
+shape = SubResource("RectangleShape2D_hy8ng")

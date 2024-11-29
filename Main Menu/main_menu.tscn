@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://cg53dpx1u7gq7"]
+
+[ext_resource type="Script" path="res://Main Menu/main_menu.gd" id="1_bscbf"]
+[ext_resource type="Texture2D" uid="uid://dqwecfa88op5u" path="res://Main Menu/Screenshot 2024-11-10 130632.png" id="2_jh48e"]
+[ext_resource type="FontFile" uid="uid://crewunf547vql" path="res://Scenes/pixely[1].ttf" id="2_qw07d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bwxkj"]
+texture = ExtResource("2_jh48e")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jgdv3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30tmb"]
+bg_color = Color(0.85098, 0.701961, 0.509804, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tw3a"]
+bg_color = Color(0.698743, 0.547368, 0.347058, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1et0q"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 10
+shadow_offset = Vector2(0, 3.41)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bscbf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bwxkj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.494
+anchor_right = 0.5
+anchor_bottom = 0.494
+offset_left = -248.0
+offset_top = 7.888
+offset_right = 263.0
+offset_bottom = 216.888
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jgdv3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_30tmb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3tw3a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1et0q")
+text = "Start game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jgdv3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_30tmb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3tw3a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1et0q")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -440.0
+offset_top = 80.0
+offset_right = 480.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.721569, 0.45098, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("2_qw07d")
+theme_override_font_sizes/font_size = 80
+text = "JUMPING KEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_pressed"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://tk8oula1bc53"]
+
+[ext_resource type="Texture2D" uid="uid://bcfl368aiqp" path="res://Enemy/Monster_Frame4.png" id="1_fgny5"]
+[ext_resource type="Texture2D" uid="uid://coyi60s1curft" path="res://Enemy/Monster_Frame1.png" id="2_4u2ug"]
+[ext_resource type="Texture2D" uid="uid://c6nkj75uvuvcw" path="res://Enemy/Monster_Frame3.png" id="3_k4kf6"]
+[ext_resource type="Texture2D" uid="uid://bchkcs844ul7q" path="res://Enemy/Monster_Frame2.png" id="4_54rnq"]
+[ext_resource type="Texture2D" uid="uid://cwpg7xsg0mn24" path="res://Enemy/Monster_Eyes.png" id="5_htvvi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jd4kd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fgny5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4u2ug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k4kf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_54rnq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="DeadEnemy" type="Node2D"]
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(0.275362, 0.348192)
+sprite_frames = SubResource("SpriteFrames_jd4kd")
+
+[node name="Eyes" type="Sprite2D" parent="Body"]
+texture = ExtResource("5_htvvi")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
